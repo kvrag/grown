@@ -1,3 +1,20 @@
 <h1>Register</h1>
-  
-  
+
+  <%= form_for(@user, multipart: true) do |f| %>
+
+    <% if @errors %>
+      <%= render 'layouts/errors' %>
+    <% end %>
+
+    <%= f.label "Username" %>
+    <%= f.text_field :username %>
+
+    <%= f.label "Password" %>
+    <%= f.password_field :password %>
+
+    <%= f.label "Confirm Password" %>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.submit "Register" %>
+
+  <% end %>
