@@ -1,0 +1,17 @@
+<h2>Edit Profile</h2>
+
+  <%= form_for(@user, multipart: true) do |f| %>
+
+    <% if @errors %>
+      <%= render 'layouts/errors' %>
+    <% end %>
+
+    <%= f.label "Username" %>
+    <%= f.text_field :username %>
+
+    <%= f.label "Bio" %>
+    <%= f.text_area :bio %>
+
+    <%= f.submit "Update" %>
+
+  <% end %>
