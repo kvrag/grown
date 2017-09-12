@@ -1,0 +1,14 @@
+<h2><%= @garden.name %></h2>
+
+  <% if !@garden.plots.empty? %>
+  <h3>Plots</h3>
+    <ul>
+      <% @garden.plots.each do |plot| %>
+        <li><%= plot.plant %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>Your garden doesn't have any plots planned! Let's <%= link_to "choose some plants", plants_path %>.</p>
+  <% end %>
+  <h4><%= @garden.name, edit_garden_path(@garden) %></h4>
+  <h4>Delete</h4>
