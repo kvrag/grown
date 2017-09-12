@@ -7,5 +7,4 @@ class User < ApplicationRecord
   
   validates :password, length: { minimum: 8 }, allow_nil: true
   validates :username, presence: true, uniqueness: true
-  validates :bio, allow_nil: true 
 end
