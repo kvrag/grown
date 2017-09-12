@@ -3,3 +3,17 @@
 <h3><%= @user.username %></h3>
 
 <p><% if @user.bio %><%= @user.bio %><% end %></p>
+
+  <% if @user.planned_gardens.empty? %>
+    <p>You don't have any gardens planned! Let's <%= link_to "plan a garden", new_garden_path %>.</p>
+  <% else %>
+    <h3>Gardens</h3>
+      <ul>
+        <% @user.planned_gardens.each do |garden| %>
+          <li><%= link_to garden.name, garden_path(garden) %></li>
+        <% end %>
+      </ul>
+      <h4><%= link_to "New Garden", new_garden_path %></h4>
+  <% end %>
+  <h4><%= link_to "Edit Profile", edit_user_path(@user) %></h4>
+  <h4>Delete Profile</h4>

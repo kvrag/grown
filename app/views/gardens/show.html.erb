@@ -1,0 +1,17 @@
+<h2><%= @garden.name %></h2>
+<h3>Location: <%= @garden.location %></h3>
+
+  <% if !@garden.plots.empty? %>
+  <h3>Plots</h3>
+    <ul>
+      <% @garden.plots.each do |plot| %>
+        <li><%= plot.plant %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p><%= @garden.name %> doesn't have any plots! Let's <%= link_to "choose some plants", plants_path %>.</p>
+  <% end %>
+  <h4>
+    <%= link_to "Edit Garden", edit_garden_path(@garden) %>
+     | <%= link_to "Delete Garden", garden_path(@garden), method: :delete, data: { confirm: "Are you sure?"} %>
+  </h4>
