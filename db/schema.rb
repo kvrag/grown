@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170910185524) do
+ActiveRecord::Schema.define(version: 20170910195033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "gardens", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "plants", force: :cascade do |t|
     t.string "name"
@@ -26,6 +33,14 @@ ActiveRecord::Schema.define(version: 20170910185524) do
     t.boolean "cold_resistant"
     t.string "fertilization"
     t.integer "watering_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "plots", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "plant_id"
+    t.integer "garden_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
