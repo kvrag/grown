@@ -3,9 +3,9 @@ class Garden < ApplicationRecord
   
   has_many :plots
   has_many :plants, through: :plots 
-  has_many :contributors, through: :plots, source: :contributor 
 
   has_many :contributions, class_name: :Plot 
+  has_many :contributors, through: :contributions, source: :contributor 
 
   validates :name, presence: true, uniqueness: true
   validates :location, presence: true
