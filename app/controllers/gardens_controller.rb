@@ -24,7 +24,7 @@ class GardensController < ApplicationController
 
   def edit
     @garden = Garden.find(params[:id])
-    redirect_to '/login' if !@garden.users.include? current_user
+    redirect_to '/login' if @garden.planner != current_user
   end
 
   def update 
@@ -34,12 +34,15 @@ class GardensController < ApplicationController
   end
 
   def destroy
+    @garden = Garden.find(params[:id])
+    @garden.destroy
+    redirect_to user_path(current_user) 
   end
 
   private
 
   def garden_params
-    params.require(:garden).permit(:name, :location)
+    params.require(:garden).permit(:name, :location, :planner_id)
   end
 
   def garden_edit_params
