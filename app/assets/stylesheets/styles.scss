@@ -1,0 +1,111 @@
+
+/* COLOR TOWN! */
+$lavender: #8879CA;
+$ltgreen: #60C060;
+$dkgreen: #2E732E;
+$medbrown: #8D5D38;
+$dkbrown: #735034;
+$bodytext: #332424;
+/*$notwhite: #FDFCF8;*/
+
+/* FONT TOWN! */
+$lecker: "Leckerli One";
+$lobster: "Lobster Two";
+$roboto: "Roboto";
+$rye: "Rye";
+$shrik: "Shrikhand";
+
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  color: $bodytext;
+  background-color: $dkgreen;
+  font-family: $roboto;
+}
+
+h1, h3 {
+  font-family: $lobster;
+}
+
+h1 {
+  text-align: center;
+  font-size: 7em;
+  line-height: 20px;
+  color: $ltgreen;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2em;
+  color: $medbrown;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+a {
+  color: $medbrown;
+  text-decoration: none;
+}
+
+a:visited {
+  color: $dkbrown;
+}
+
+a:hover {
+  color: $lavender;
+}
+
+.border-box {
+  /*border-top: 40px solid $lavender;*/
+  border-bottom: 40px solid $ltgreen;
+  background-color: #FDFCF8;
+  text-align: left;
+  width: 100%;
+}
+
+.content-box {
+  padding: 30px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* NAVIGATION TOWN! */
+
+nav {
+  width: 100%;
+  background-color: $ltgreen;
+  padding-top: 20px;
+  padding-bottom: 10px;
+
+/* why isn't this working inconsistently?! */
+  a {
+    color: #FDFCF8;
+    font-size: 1.3em;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: $medbrown;
+  }
+
+  ul {
+    max-width: 800px;
+    margin: 0 auto;
+    list-style: none;
+    padding: none;
+    text-align: center;
+  }
+
+  li {
+    display: inline;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
