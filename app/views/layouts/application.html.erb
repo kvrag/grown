@@ -4,26 +4,33 @@
     <title>Grown</title>
     <%= csrf_meta_tags %>
 
+    <link href="https://fonts.googleapis.com/css?family=Leckerli+One|Lobster+Two:700|Roboto:400,700|Rye|Shrikhand" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://use.fontawesome.com/016cc8e025.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <h1>Grown</h1>
+    <h1>Grow<span style="letter-spacing: -5px;">n<i style="font-size: 0.9em; line-height: 0px;" class="fa fa-leaf" aria-hidden="true"></i></span></h1>
     <nav>
       <ul>
         <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Plants", plants_path %></li>
         <% if logged_in? %>
-          <li><%= link_to "Log Out", controller: "sessions", action: "destroy" %></li>
           <li><%= link_to "Profile", user_path(current_user) %></li>
-          <li><%= link_to "All Gardens", gardens_path %></li>
+          <li><%= link_to "Gardens", gardens_path %></li>
+          <li><%= link_to "Plants", plants_path %></li>
+          <li><%= link_to "Log Out", controller: "sessions", action: "destroy" %></li>
         <% else %>
           <li><%= link_to "Log In", '/login' %></li>
           <li><%= link_to "Register", new_user_path %></li>
         <% end %>
       </ul>
     </nav>
-    <%= yield %>
+    
+    <div class="border-box">
+      <div class="content-box">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

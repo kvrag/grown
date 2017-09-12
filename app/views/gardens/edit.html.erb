@@ -1,17 +1,25 @@
 <h2>Edit <%= @garden.name %></h2>
 
-  <%= form_for(@garden, multipart: true) do |f| %>
+<%= form_for(@garden, multipart: true) do |f| %>
 
+  <div class="errors">
     <% if @errors %>
       <%= render 'layouts/errors' %>
     <% end %>
+  </div>
 
-    <%= f.label "Name of Garden" %>
+  <div class="form-input">
+    <%= f.label "Name of Garden: " %>
     <%= f.text_field :name %>
+  </div>
 
-    <%= f.label "Location" %>
+  <div class="form-input">
+    <%= f.label "Location: " %>
     <%= f.text_field :location %>
+  </div>
 
+  <div class="form-button">
     <%= f.submit "Update" %>
+  </div>
 
-  <% end %>
+<% end %>
