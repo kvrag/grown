@@ -4,7 +4,9 @@
 
 <p><% if @user.bio %><%= @user.bio %><% end %></p>
 
-  <% if !@user.gardens.empty? %>
+  <% if @user.gardens.empty? %>
+    <p>You don't have any gardens planned! Let's <%= link_to "plan a garden", new_garden_path %>.</p>
+  <% else %>
     <h3>Gardens</h3>
       <ul>
         <% @user.gardens.each do |garden| %>
@@ -12,8 +14,6 @@
         <% end %>
       </ul>
       <h4><%= link_to "New Garden", new_garden_path %></h4>
-  <% else %>
-    <p>You don't have any gardens planned! Let's <%= link_to "plan a garden", new_garden_path %>.</p>
   <% end %>
   <h4><%= link_to "Edit Profile", edit_user_path(@user) %></h4>
   <h4>Delete Profile</h4>

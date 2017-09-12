@@ -6,7 +6,6 @@ class GardensController < ApplicationController
 
   def show
     @garden = Garden.find(params[:id])
-    redirect_to '/login' if !@garden.users.include? current_user
   end
 
   def new 
