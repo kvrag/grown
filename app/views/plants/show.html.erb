@@ -1,0 +1,17 @@
+<h2>
+  <%= @plant.name %>
+</h2>
+
+<h3>Timeline:</h3>
+  <ul>
+    <li><%= @plant.name %> grow best in <%= @plant.season %> and do well in a soil temperature of <%= @plant.soil_temp %> degrees.</li>
+    <li><%= @plant.name %> should germinate (seeds begin to sprout) in <%= @plant.days_to_germination %> days and be ready to harvest in <%= @plant.days_to_maturity %> days!</li>
+  </ul>
+
+<h3>Maintenance:</h3>
+  <ol class="maintenance">
+    <li><strong>Plant</strong> the seeds <%= @plant.planting_depth %> inches under the soil.</li>
+    <li><strong>Fertilize</strong> the plants <%= @plant.fertilization.downcase %>.</li>
+    <li><strong>Water</strong> your <%= @plant.name.downcase %> <%= @plant.watering.frequency.downcase %>.</li>
+  </ol>
+

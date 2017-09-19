@@ -1,0 +1,24 @@
+<h2>Add a Plot</h2>
+
+<%= form_for(@plot, url: garden_plots_path, multipart: true) do |f| %>
+
+
+  <div class="errors">
+    <% if @errors %>
+      <%= render 'layouts/errors' %>
+    <% end %>
+  </div>
+
+  <%= f.hidden_field(:contributor_id,  value: current_user.id) %>
+  <%= f.hidden_field(:garden_id, value: params[:garden_id]) %>
+
+  <div class="form-input">
+    <%= f.label "Plant: " %>
+    <%= f.collection_select :plant_id, Plant.order(:name), :id, :name, include_blank: false %>
+  </div> 
+
+  <div class="form-button">
+    <%= f.submit "Add" %>
+  </div %>
+
+<% end %>
