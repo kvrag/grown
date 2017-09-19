@@ -5,12 +5,16 @@
   <h3>Plots</h3>
     <ul>
       <% @garden.plots.each do |plot| %>
-        <li><%= plot.plant %></li>
+        <li><%= plot.plant.name %></li>
       <% end %>
     </ul>
   <% else %>
-    <p><%= @garden.name %> doesn't have any plots! Let's <%= link_to "choose some plants", plants_path %>.</p>
+    <p><%= @garden.name %> doesn't have any plots! Let's <%= link_to "browse some plants", plants_path %>.</p>
   <% end %>
+
+  <h4><%= link_to "Add a Plot", new_garden_plot_path(@garden) %></h4>
+  
+
   <h4>
     <%= link_to "Edit Garden", edit_garden_path(@garden) %>
      | <%= link_to "Delete Garden", garden_path(@garden), method: :delete, data: { confirm: "Are you sure?"} %>

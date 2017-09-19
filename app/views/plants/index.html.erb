@@ -1,0 +1,9 @@
+<h2>All Plants</h2>
+
+<ul class="plant-list">
+  <% @plants.each do |plant| %>
+
+    <li><%= link_to plant.name, plant_path(plant) %></li>
+
+  <% end %>
+</ol>

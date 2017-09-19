@@ -6,6 +6,7 @@ class GardensController < ApplicationController
 
   def show
     @garden = Garden.find(params[:id])
+    @plot = Plot.new
   end
 
   def new 
