@@ -5,7 +5,7 @@
   <h3>Plots</h3>
     <ul>
       <% @garden.plots.each do |plot| %>
-        <li><%= plot.plant %></li>
+        <li><%= plot.plant.name %></li>
       <% end %>
     </ul>
   <% else %>

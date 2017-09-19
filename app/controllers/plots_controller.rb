@@ -17,7 +17,7 @@ class PlotsController < ApplicationController
   private
 
   def plot_params
-    params.require(:plot).permit(:planner_id, :garden_id, :plant_id)
+    params.require(:plot).permit(:contributor_id, :garden_id, :plant_id)
   end
 
 end
