@@ -15,3 +15,8 @@
     <li><strong>Water</strong> your <%= @plant.name.downcase %> <%= @plant.watering.frequency.downcase %>.</li>
   </ol>
 
+<% if logged_in? && !current_user.planned_gardens.empty? %>
+  <%= render 'plots/new', locals: {plant: @plant} %>
+<% end %>
+
+
