@@ -16,7 +16,7 @@
   </ol>
 
 <% if logged_in? && !current_user.planned_gardens.empty? %>
-  <%= render 'plots/new', locals: {plant: @plant} %>
+  <%= render 'plots/new' %>
 <% end %>
 
 

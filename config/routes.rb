@@ -12,4 +12,6 @@ Rails.application.routes.draw do
     resources :plots
   end
 
+  resources :plots, only: [:create, :new] 
+
 end
